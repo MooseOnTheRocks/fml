@@ -1,0 +1,153 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>
+Tree Segmentation Visualizer
+</title>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js">
+</script>
+</head>
+<body>
+<div id="flex-container">
+<div id="sketch-canvas">
+</div>
+<div id="sketch-controls">
+<h2>
+Tree Segmentation Visualizer
+</h2>
+<p>
+Inputs are expected to be images, all of the same size.
+<br>
+Patch and hierarchy images should be encoded with their respective IDs.
+<br>
+To inspect a different dataset (i.e. images of different sizes), refresh the page before loading.
+</p>
+<table id="table-controls">
+<tr>
+<th>
+</th>
+<th>
+File Inputs
+</th>
+<th>
+Which grid to show
+</th>
+</tr>
+<tr>
+<th>
+Height Levels
+</th>
+<td>
+<input type="file">
+</td>
+<td>
+<input type="radio" name="input-grid-to-show">
+</td>
+</tr>
+<tr>
+<th>
+Patch Labels
+</th>
+<td>
+<input type="file">
+</td>
+<td>
+<input type="radio" name="input-grid-to-show">
+</td>
+</tr>
+<tr>
+<th>
+Hierarchy Labels
+</th>
+<td>
+<input type="file">
+</td>
+<td>
+<input type="radio" name="input-grid-to-show">
+</td>
+</tr>
+</table>
+<table id="display-info">
+<tr>
+<th colspan="2">
+<h3>
+== Selected
+</h3>
+</th>
+<th colspan="2">
+<h3>
+== Mouse
+</h3>
+</th>
+</tr>
+<tr>
+<td>
+<p>
+Cell coordinates:
+<br>
+Height level:
+<br>
+Patch label:
+<br>
+Hierarchy label:
+</p>
+</td>
+<td>
+<span id="display-selected-cell-coords">
+NA
+</span>
+<br>
+<span id="display-selected-cell-height">
+NA
+</span>
+<br>
+<span id="display-selected-cell-patch">
+NA
+</span>
+<br>
+<span id="display-selected-cell-hierarchy">
+NA
+</span>
+</td>
+<td>
+<p>
+Cell coordinates:
+<br>
+Height level:
+<br>
+Patch label:
+<br>
+Hierarchy label:
+</p>
+</td>
+<td>
+<span id="display-mouse-cell-coords">
+NA
+</span>
+<br>
+<span id="display-mouse-cell-height">
+NA
+</span>
+<br>
+<span id="display-mouse-cell-patch">
+NA
+</span>
+<br>
+<span id="display-mouse-cell-hierarchy">
+NA
+</span>
+</td>
+</tr>
+</table>
+<br>
+Contained patches[
+<span id="display-selected-contained-patches-count">
+]:
+<br>
+<textarea name="display-selected-contained-patches" id="display-selected-contained-patches" cols="80" rows="5">
+</textarea>
+</div>
+</div>
+</body>
+</html>

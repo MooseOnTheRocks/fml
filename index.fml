@@ -1,0 +1,105 @@
+html {
+    head {
+        link(rel="stylesheet", href="style.css")
+        meta(charset="UTF-8")
+        title: "Tree Segmentation Visualizer"
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js") {}
+    }
+
+    body {
+        div(id="flex-container") {
+            div (id="sketch-canvas") {}
+
+            div (id="sketch-controls") {
+                h2: "Tree Segmentation Visualizer"
+                p {
+                    "Inputs are expected to be images, all of the same size."
+                    br 
+                    "Patch and hierarchy images should be encoded with their respective IDs."
+                    br
+                    "To inspect a different dataset (i.e. images of different sizes), refresh the page before loading."
+                }
+
+                table(id="table-controls") {
+                    tr {
+                        th {}
+                        th: "File Inputs"
+                        th: "Which grid to show"
+                    }
+                    tr {
+                        th: "Height Levels"
+                        td: input(type="file")
+                        td: input(type="radio" name="input-grid-to-show")
+                    }
+
+                    tr {
+                        th: "Patch Labels"
+                        td: input(type="file")
+                        td: input(type="radio" name="input-grid-to-show")
+                    }
+
+                    tr {
+                        th: "Hierarchy Labels"
+                        td: input(type="file")
+                        td: input(type="radio" name="input-grid-to-show")
+                    }
+                }
+
+                table(id="display-info") {
+                    tr {
+                        th(colspan="2") {
+                            h3: "== Selected"
+                        }
+                        th(colspan="2") {
+                            h3: "== Mouse"
+                        }
+                    }
+                    tr {
+                        td: p {
+                            "Cell coordinates:"
+                            br
+                            "Height level:"
+                            br
+                            "Patch label:"
+                            br
+                            "Hierarchy label:"
+                        }
+                        td {
+                            span(id="display-selected-cell-coords") {"NA"}
+                            br
+                            span(id="display-selected-cell-height") {"NA"}
+                            br
+                            span(id="display-selected-cell-patch") {"NA"}
+                            br
+                            span(id="display-selected-cell-hierarchy") {"NA"}
+                        }
+                        td: p {
+                            "Cell coordinates:"
+                            br
+                            "Height level:"
+                            br
+                            "Patch label:"
+                            br
+                            "Hierarchy label:"
+                        }
+                        td {
+                            span(id="display-mouse-cell-coords") {"NA"}
+                            br
+                            span(id="display-mouse-cell-height") {"NA"}
+                            br
+                            span(id="display-mouse-cell-patch") {"NA"}
+                            br
+                            span(id="display-mouse-cell-hierarchy") {"NA"}
+                        }
+                    }
+                }
+                br
+                "Contained patches["
+                    span(id="display-selected-contained-patches-count")
+                "]:"
+                br
+                textarea(name="display-selected-contained-patches" id="display-selected-contained-patches" cols="80" rows="5") {}
+            }
+        }
+    }
+}
